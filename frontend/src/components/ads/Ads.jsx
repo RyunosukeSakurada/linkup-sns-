@@ -3,8 +3,10 @@ import "./Ads.css"
 
 function Ads() {
   return (
-    <div>
-      Ads
+    <div className='ads'>
+      <div className="adsContainer">
+        Ads
+      </div>
     </div>
   )
 }

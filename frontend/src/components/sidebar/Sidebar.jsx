@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Sidebar.css"
-import { Home, Logout, Message, NotificationAdd, Notifications } from '@mui/icons-material'
+import { Home, Logout, Message, Notifications } from '@mui/icons-material'
 
 export default function Sidebar() {
   return (
