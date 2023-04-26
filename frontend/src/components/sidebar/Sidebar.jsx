@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Sidebar.css"
-import { Home, Message, NotificationAdd, Notifications } from '@mui/icons-material'
+import { Home, Logout, Message, NotificationAdd, Notifications } from '@mui/icons-material'
 
 export default function Sidebar() {
   return (
@@ -17,7 +17,11 @@ export default function Sidebar() {
           </li>
           <li className='sidebarListItem'>
             <Message className='sidebarListItemIcon'/>
-            <span className='sidebarListItemText'>Notification</span>
+            <span className='sidebarListItemText'>Message</span>
+          </li>
+          <li className='sidebarListItem'>
+            <Logout className='sidebarListItemIcon'/>
+            <span className='sidebarListItemText'>Logout</span>
           </li>
         </div>
       </div>
