@@ -1,0 +1,24 @@
+.sidebar{
+  flex: 2.5;
+  height: 100vh;
+  background-color: #333;
+}
+.sidebarContainer{
+  padding: 20px;
+}
+.sidebarList{
+  padding: 0;
+  margin: 0;
+}
+.sidebarListItem{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.sidebarListItem:hover{
+  color: #b5b5b5;
+}
+.sidebarListItemIcon{
+  margin-right: 5px;
+}

@@ -1,8 +1,8 @@
 import React from 'react'
 import Topbar from '../../components/topbar/Topbar'
 import Sidebar from "../../components/sidebar/Sidebar"
-// import Timeline from "../../components/timeline/Timeline"
-// import Ads from "../../components/ads/Ads"
+import Timeline from "../../components/timeline/Timeline"
+import Ads from "../../components/ads/Ads"
 import "./Home.css"
 
 function Home() {
@@ -11,8 +11,8 @@ function Home() {
       <Topbar />
       <div className="homecontainer">
         <Sidebar />
-        {/* <Timeline />
-        <Ads /> */}
+        <Timeline />
+        <Ads />
       </div>
     </>
   )
