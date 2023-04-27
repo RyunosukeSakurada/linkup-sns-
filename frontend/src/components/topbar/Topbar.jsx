@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Topbar.css"
 import { Chat, Notifications, Search, Settings } from "@mui/icons-material"
+import { Link } from 'react-router-dom'
 
 
 function Topbar() {
@@ -8,7 +9,9 @@ function Topbar() {
     <>
       <div className="topbarContainer">
         <div className="topbarLeft">
-          <span className='logo'>LINKUP</span>
+          <Link to="/" style={{textDecoration:"none"}}>
+            <span className='logo'>LINKUP</span>
+          </Link>
           <div className="searchbar">
             <input 
               type="text" 
@@ -32,11 +35,13 @@ function Topbar() {
               <div className="topbarItemIcon">
                 <Settings />
               </div>
-              <img 
-                src="/assets/person/1.jpg" 
-                alt="" 
-                className='topbarImg'
-              />
+              <Link to="/profile/Ron">
+                <img 
+                  src="/assets/person/1.jpg" 
+                  alt="" 
+                  className='topbarImg'
+                />
+              </Link>
           </div>
         </div>
 
