@@ -1,0 +1,27 @@
+.sponsor{
+  flex: 3.5;
+  width: 100%;
+}
+.sponsorContainer{
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #222222;
+}
+.sponsorTitle{
+  font-size: 14px;
+}
+.sponsorCompany{
+  margin-bottom: 20px;
+}
+.sponsorCompanyName{
+  font-size: 14px;
+}
+.sponsorImg{
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0 3px 0;
+}
+.sponsorText{
+  font-size: 10px;
+  color:rgb(155, 155, 155);
+}

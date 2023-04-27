@@ -1,21 +1,18 @@
 import React from 'react'
-import Topbar from '../../components/topbar/Topbar'
+import Topbar from "../../components/topbar/Topbar"
 import Sidebar from "../../components/sidebar/Sidebar"
 import Timeline from "../../components/timeline/Timeline"
-import Sponsor from "../../components/sponsor/Sponsor"
-import "./Home.css"
 
-function Home() {
+function Profile() {
   return (
     <>
       <Topbar />
-      <div className="homecontainer">
+      <div className="profilecontainer">
         <Sidebar />
         <Timeline />
-        <Sponsor />
       </div>
     </>
   )
 }
 
-export default Home
+export default Profile

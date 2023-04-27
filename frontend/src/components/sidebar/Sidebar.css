@@ -1,10 +1,11 @@
 .sidebar{
-  flex: 2.5;
+  flex: 2;
   height: 100vh;
 }
 .sidebarContainer{
-  background-color: #333;
-  padding: 20px;
+  background-color: #222;
+  padding: 30px;
+  border-radius: 5px;
 }
 .sidebarList{
   padding: 0;
