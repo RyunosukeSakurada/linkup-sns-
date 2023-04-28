@@ -35,13 +35,11 @@ function Topbar() {
               <div className="topbarItemIcon">
                 <Settings />
               </div>
-              <Link to="/profile/Ron">
                 <img 
                   src="/assets/person/1.jpg" 
                   alt="" 
                   className='topbarImg'
                 />
-              </Link>
           </div>
         </div>
 

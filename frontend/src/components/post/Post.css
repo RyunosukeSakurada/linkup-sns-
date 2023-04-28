@@ -32,21 +32,6 @@
 .postUsername{
   color: rgb(155, 155, 155);
 }
-.postIcon{
-  margin-left: auto;
-  background-color: #fd9800;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.postIcon:hover{
-  background-color: #bf7200;
-}
-
 .postContent{
   margin: 20px 0 ;
 }
