@@ -3,12 +3,15 @@ import "./Share.css"
 import {Gif, Image, Mic, Poll} from '@mui/icons-material'
 
 function Share() {
+  const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
+
+  
   return (
     <div className='share'>
       <div className="shareContainer">
         <div className="shareTop">
           <img 
-            src="/assets/person/1.jpg" 
+            src={PUBLIC_FOLDER + "/person/noAvatar.png"}
             alt="" 
             className='shareImg'
           />

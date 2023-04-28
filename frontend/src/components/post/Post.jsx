@@ -1,14 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Post.css"
-import { PersonAdd } from '@mui/icons-material'
-import { Users } from "../../dummyData"
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import {format} from "timeago.js";
+
+
+// import { Users } from "../../dummyData"
 
 export default function Post( {post} ) {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
 
-  const [like,setLike] = useState(post.like);
+  const [like,setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
+
+  const [user, setUser] = useState({});
+
+  useEffect(()=> {
+    const fetchUser = async () => {
+      const response = await axios.get(`/users?userId=${post.userId}`);
+      // console.log(response);
+      setUser(response.data)
+    }
+    fetchUser();
+  },[post.userId]);
 
   const handleLike = () => {
     setLike(isLiked ? like -1 : like +1);
@@ -18,28 +32,25 @@ export default function Post( {post} ) {
   return (
     <div className='post'>
       <div className="postContainer">
-        <Link to="/profile/Ron" style={{textDecoration:"none"}}>
           <div className="postUserAccount">
             <img 
-                src={PUBLIC_FOLDER + Users.filter((user) => user.id === post.id)[0].profilePicture}
+                src={user.profilePicture || PUBLIC_FOLDER + "/person/noAvatar.png"}
                 alt="" 
                 className='postUserImg'
             />
+          <Link to={`/profile/${user.username}`} style={{textDecoration:"none"}}>
             <div className="postUserAccountDetails">
-              <p className='postName' style={{color: "#fff"}}>{Users.filter((user) => user.id === post.id)[0].name}</p>
-              <span className='postUsername'>{Users.filter((user) => user.id === post.id)[0].username}</span>
+              <p className='postName' style={{color: "#fff"}}>{user.fullname}</p>
+              <span className='postUsername'>{user.username}</span>
             </div>
-            <div className="postIcon">
-              <PersonAdd />
-            </div>
+          </Link>
           </div>
-        </Link>
 
         <div className="postContent">
-          <p className='postDate'>{post.date}</p>
-          <p className="postText">{post.desc}</p>
+          <p className='postDate'>{format(post.createdAt)}</p>
+          <p className="postText">{post.description}</p>
           <img 
-            src={PUBLIC_FOLDER + post.photo}
+            src={PUBLIC_FOLDER + post.img}
             alt="" 
             className='postContentImg'
           />
