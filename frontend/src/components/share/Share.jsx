@@ -1,4 +1,4 @@
-import React, { useContext, useRef} from 'react'
+import React, { useContext, useRef, useState} from 'react'
 import "./Share.css"
 import {Gif, Image, Mic, Poll} from '@mui/icons-material'
 import { AuthContext } from '../../state/AuthContext';
@@ -9,7 +9,9 @@ function Share() {
 
   const {user} = useContext(AuthContext);
 
-  const description = useRef()
+  const description = useRef();
+
+  const [file, setFile] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,6 +20,20 @@ function Share() {
       userId: user._id,
       description:description.current.value,
     };
+
+    if(file){
+      const data = new FormData();
+      const fileName = Date.now() + file.name;
+      data.append("name", fileName);
+      data.append("file", file);
+      newPost.img = fileName;
+
+      try {
+        await axios.post("/upload", data)
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
     try {
       await axios.post("/posts", newPost);
@@ -50,9 +66,16 @@ function Share() {
         <hr className='shareBorder'/>
         <form className="shareButtons" onSubmit={(e) => handleSubmit(e)}>
           <div className="shareOptions">
-            <label className="shareOption">
+            <label className="shareOption" htmlFor='file'>
               <Image />
               <span className='shareOptionText'>Image</span>
+              <input 
+                type="file" 
+                id='file' 
+                accept='.png, .jpeg, .jpg' 
+                style={{display: "none"}}
+                onChange={(e) => setFile(e.target.files[0])}
+              />
             </label>
             <div className="shareOption">
               <Gif />

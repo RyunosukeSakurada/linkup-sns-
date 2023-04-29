@@ -49,6 +49,9 @@
 .loginInput:focus{
   outline: none;
 }
+.signupButtonContainer{
+  text-align: center;
+}
 .loginButton{
   height: 40px;
   border-radius: 10px;

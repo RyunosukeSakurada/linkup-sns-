@@ -2,13 +2,15 @@ import React from 'react'
 import "./Sponsor.css"
 
 function Sponsor() {
+  const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
     <div className='sponsor'>
       <div className="sponsorContainer">
         <span className='sponsorTitle'>Sponsored</span>
           <div className="sponsorCompany">
             <img 
-              src="/assets/sponsor/sponsor1.jpg" 
+              src={PUBLIC_FOLDER + "sponsor/sponsor1.jpg"}
               alt="" 
               className='sponsorImg'
             />
@@ -20,7 +22,7 @@ function Sponsor() {
 
           <div className="sponsorCompany">
             <img 
-              src="/assets/sponsor/sponsor2.jpg" 
+              src={PUBLIC_FOLDER + "sponsor/sponsor2.jpg"}
               alt="" 
               className='sponsorImg'
             />
@@ -32,7 +34,7 @@ function Sponsor() {
 
           <div className="sponsorCompany">
             <img 
-              src="/assets/sponsor/sponsor3.jpg" 
+              src={PUBLIC_FOLDER + "sponsor/sponsor3.jpg"}
               alt="" 
               className='sponsorImg'
             />
