@@ -22,7 +22,7 @@ function Timeline( {username} ) {
           })
         );
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     };
     fetchPosts();
