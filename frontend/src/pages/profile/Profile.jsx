@@ -20,7 +20,7 @@ function Profile(  ) {
       setUser(response.data)
     }
     fetchUser();
-  },[]);
+  },[username]); 
 
   return (
     <>
