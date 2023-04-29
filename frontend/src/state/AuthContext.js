@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect  } from "react"
+import { createContext, useReducer} from "react"
 import AuthReducer from "./AuthReducer";
 
 //Define the first user
