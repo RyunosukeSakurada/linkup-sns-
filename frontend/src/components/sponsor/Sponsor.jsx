@@ -8,19 +8,19 @@ function Sponsor() {
         <span className='sponsorTitle'>Sponsored</span>
           <div className="sponsorCompany">
             <img 
-              src="/assets/sponsor/sponsor1.jpeg" 
+              src="/assets/sponsor/sponsor1.jpg" 
               alt="" 
               className='sponsorImg'
             />
-            <span className='sponsorCompanyName'>Bagtopia</span>
+            <span className='sponsorCompanyName'>Lunaire Apparel</span>
             <p className='sponsorText'>
-              Bagtopia is a trendy and fashionable bag store that offers a wide range of high-quality bags for all occasions. From stylish totes and chic backpacks to elegant clutches and practical travel bags, we have something for everyone. Our products are made from the finest materials and are designed to be both stylish and functional. We strive to provide exceptional customer service and a seamless shopping experience for our customers.
+            Lunaire Apparel is a fashion brand that offers high-quality and unique clothing with innovative designs. We prioritize sustainability and strive to make a positive impact on the environment. At Lunaire Apparel, we aim to take your fashion style to the next level.
             </p>
           </div>
 
           <div className="sponsorCompany">
             <img 
-              src="/assets/sponsor/sponsor2.jpeg" 
+              src="/assets/sponsor/sponsor2.jpg" 
               alt="" 
               className='sponsorImg'
             />
@@ -32,13 +32,13 @@ function Sponsor() {
 
           <div className="sponsorCompany">
             <img 
-              src="/assets/sponsor/sponsor3.jpeg" 
+              src="/assets/sponsor/sponsor3.jpg" 
               alt="" 
               className='sponsorImg'
             />
-            <span className='sponsorCompanyName'>Timeless Autos</span>
+            <span className='sponsorCompanyName'>TechVision</span>
             <p className='sponsorText'>
-              Timeless Autos specializes in vintage and classic cars. Our showroom offers a carefully curated selection of restored and maintained automobiles, with expert assistance in finding your perfect vehicle. We also provide maintenance and repair services to keep your classic car running smoothly, all while providing exceptional customer service.
+            TechVision provides innovative and high-quality IT solutions, specializing in web development, custom software development, and AI solutions. We promise to use the latest technologies to contribute to the growth of your business. TechVision strives for your success.
             </p>
           </div>
       </div>

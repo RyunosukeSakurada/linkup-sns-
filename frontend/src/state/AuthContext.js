@@ -1,7 +1,7 @@
 import { createContext, useReducer, useEffect  } from "react"
 import AuthReducer from "./AuthReducer";
 
-//最初のユーザー状態を定義
+//Define the first user
 const initialState = {
   // user: JSON.parse(localStorage.getItem("user")) || null,
   user:{
@@ -10,7 +10,7 @@ const initialState = {
     username:"ronskrd",
     email: "longzhizhu513@gmail.com",
     password:"Longzhizhu513",
-    profilePicture: "",
+    profilePicture: "/person/1.jpg",
     followers: [],
     followings: [],
     isAdmin: false
@@ -19,7 +19,7 @@ const initialState = {
   error:false
 }
 
-//状態をグローバルに管理する
+//manage this state grobally
 export const AuthContext = createContext(initialState);
 
 export const AuthContextProvider = ( {children} ) => {
