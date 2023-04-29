@@ -66,6 +66,9 @@
   text-align: center;
   font-size: 12px;
 }
+.signupButtonContainer{
+  text-align: center;
+}
 .signupButton{
   height: 40px;
   border-radius: 10px;

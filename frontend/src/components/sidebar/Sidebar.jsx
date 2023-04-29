@@ -1,9 +1,18 @@
 import React from 'react'
 import "./Sidebar.css"
 import { Home, Logout, Message, Notifications } from '@mui/icons-material'
-import { Link } from 'react-router-dom'
+import {Link, useNavigate} from "react-router-dom"
+
 
 export default function Sidebar() {
+
+  const navigate = useNavigate();
+
+  const handleLogout = () =>{
+    localStorage.clear();
+    navigate("/login");
+  }
+
   return (
     <div className='sidebar'>
       <div className="sidebarContainer">
@@ -24,7 +33,7 @@ export default function Sidebar() {
           </li>
           <li className='sidebarListItem'>
             <Logout className='sidebarListItemIcon'/>
-            <span className='sidebarListItemText'>Logout</span>
+            <span className='sidebarListItemText' onClick={handleLogout}>Logout</span>
           </li>
         </div>
       </div>

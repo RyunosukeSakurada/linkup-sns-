@@ -1,10 +1,10 @@
 import React, { useRef } from 'react'
 import "./Register.css"
 import axios from 'axios';
-import {useNavigate} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 
-export default function Login() {
+export default function Register() {
 
   const username = useRef();
   const fullname = useRef();
@@ -17,7 +17,7 @@ export default function Login() {
     e.preventDefault();
 
     if(password.current.value !== confirmationPassword.current.value){
-      confirmationPassword.current.setCustomValidity("パスワードが違います")
+      confirmationPassword.current.setCustomValidity("Incorrect password")
     }else{
       try {
         const user = {
@@ -25,7 +25,6 @@ export default function Login() {
           username : username.current.value,
           password : password.current.value,
         }
-        //registerAPIを叩く
         await axios.post("/auth/register", user)
         navigate("/login");
 
@@ -74,7 +73,11 @@ export default function Login() {
               ref={confirmationPassword}
             />
             <button className='loginButton' type='submit'>Sign Up</button>
-            <button className='signupButton'>Login</button>
+            <div className="signupButtonContainer">
+              <Link to="/login">
+                <button className='signupButton'>Login</button>
+              </Link>
+            </div>
           </form>
         </div>
       </div>

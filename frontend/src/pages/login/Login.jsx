@@ -2,6 +2,7 @@ import React, { useContext, useRef } from 'react'
 import "./Login.css";
 import { loginCall } from '../../actionCalls';
 import { AuthContext } from '../../state/AuthContext';
+import { Link } from 'react-router-dom';
 
 
 export default function Login() {
@@ -51,7 +52,11 @@ export default function Login() {
             />
             <button className='loginButton'>Login</button>
             <span className='loginForgot'>Did you forget your password ?</span>
-            <button className='signupButton'>Sign Up</button>
+            <div className="signupButtonContainer">
+              <Link to="/register">
+                <button className='signupButton'>Sign Up</button>
+              </Link>
+            </div>
           </form>
         </div>
       </div>
