@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./Post.css"
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import {format} from "timeago.js";
+import { AuthContext } from '../../state/AuthContext';
 
-
-// import { Users } from "../../dummyData"
 
 export default function Post( {post} ) {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -14,6 +13,9 @@ export default function Post( {post} ) {
   const [isLiked, setIsLiked] = useState(false);
 
   const [user, setUser] = useState({});
+
+  const {user: currentUser} = useContext(AuthContext);
+
 
   useEffect(()=> {
     const fetchUser = async () => {
@@ -24,17 +26,28 @@ export default function Post( {post} ) {
     fetchUser();
   },[post.userId]);
 
-  const handleLike = () => {
+
+  const handleLike = async() => {
+    try {
+      //use LIKE API
+      await axios.put(`/posts/${post._id}/like`,{ userId:currentUser._id});
+    } catch (error) {
+      console.log(error);
+    }
     setLike(isLiked ? like -1 : like +1);
     setIsLiked(!isLiked);
-  };
+  }
 
   return (
     <div className='post'>
       <div className="postContainer">
           <div className="postUserAccount">
             <img 
-                src={user.profilePicture || PUBLIC_FOLDER + "/person/noAvatar.png"}
+                src={
+                  user.profilePicture
+                  ? PUBLIC_FOLDER + user.profilePicture  
+                  : PUBLIC_FOLDER + "/person/noAvatar.png"
+                }
                 alt="" 
                 className='postUserImg'
             />
