@@ -83,3 +83,22 @@
 .signupButton:hover{
   background-color: #2d683c;
 }
+
+@media (max-width: 678px){
+  .logincontainer{
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding: 0 2rem;
+    text-align: center;
+  }
+  .loginBox{
+    padding: 5px;
+  }
+  .loginLeft{
+    flex:.6;
+  }
+  .loginRight{
+    flex:1.4;
+  }
+}

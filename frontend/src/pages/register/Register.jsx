@@ -7,6 +7,7 @@ import {Link, useNavigate} from "react-router-dom"
 export default function Register() {
   const username = useRef();
   const fullname = useRef();
+  const email = useRef();
   const password = useRef();
   const confirmationPassword = useRef();
 
@@ -22,6 +23,7 @@ export default function Register() {
         const user = {
           fullname : fullname.current.value,
           username : username.current.value,
+          email : email.current.value,
           password : password.current.value,
           confirmationPassword : confirmationPassword.current.value,
         };
@@ -57,6 +59,13 @@ export default function Register() {
               placeholder='Username'
               required
               ref={username}
+            />
+            <input 
+              type="email" 
+              className='loginInput'
+              placeholder='Email'
+              required
+              ref={email}
             />
             <input 
               type="password" 

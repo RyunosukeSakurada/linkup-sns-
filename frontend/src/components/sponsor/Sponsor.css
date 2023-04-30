@@ -25,3 +25,9 @@
   font-size: 10px;
   color:rgb(155, 155, 155);
 }
+
+@media (max-width:870px){
+  .sponsor{
+    display: none;
+  }
+}

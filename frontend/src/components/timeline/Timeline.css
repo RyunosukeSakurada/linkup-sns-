@@ -1,3 +1,9 @@
 .timeline{
   flex: 6.5;
 }
+
+@media (max-width:656px){
+  .timeline{
+    flex:2;
+  }
+}

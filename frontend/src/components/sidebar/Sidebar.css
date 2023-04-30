@@ -23,3 +23,10 @@
 .sidebarListItemIcon{
   margin-right: 5px;
 }
+
+@media (max-width:870px){
+  .sidebar{
+    flex:1.5;
+  }
+}
+
