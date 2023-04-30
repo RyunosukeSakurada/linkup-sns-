@@ -24,10 +24,10 @@ export default function Register() {
           fullname : fullname.current.value,
           username : username.current.value,
           password : password.current.value,
+          confirmationPassword : confirmationPassword.current.value,
         }
         await axios.post("/auth/register", user)
         navigate("/login");
-
       } catch (error) {
         console.log(error);
       }
@@ -63,6 +63,7 @@ export default function Register() {
               className='loginInput'
               placeholder='Password'
               required
+              minLength="5"
               ref={password}
             />
             <input 
@@ -70,6 +71,7 @@ export default function Register() {
               className='loginInput'
               placeholder='Confirmation password'
               required
+              minLength="5"
               ref={confirmationPassword}
             />
             <button className='loginButton' type='submit'>Sign Up</button>
