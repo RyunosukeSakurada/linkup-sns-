@@ -69,3 +69,15 @@
 .shareButton:hover{
   background-color: #bf7200;
 }
+
+@media (max-width:454px){
+  .shareButtons{
+    flex-direction: column;
+  }
+  .shareButton{
+    margin-top: 10px;
+  }
+  .shareOption{
+    margin-right: 15px;
+  }
+}
