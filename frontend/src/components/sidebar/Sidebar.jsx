@@ -12,7 +12,7 @@ export default function Sidebar() {
     e.preventDefault();
 
     localStorage.clear();
-    navigate("/login");
+    navigate("/register");
   }
 
   return (
