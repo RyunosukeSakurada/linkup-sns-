@@ -25,7 +25,7 @@ export default function Register() {
           password : password.current.value,
           confirmationPassword : confirmationPassword.current.value,
         };
-        // Register API
+        //Register API
         await axios.post("/auth/register", user);
         navigate("/login");
       } catch (error) {
