@@ -8,7 +8,9 @@ export default function Sidebar() {
 
   const navigate = useNavigate();
 
-  const handleLogout = () =>{
+  const handleLogout = (e) =>{
+    e.preventDefault();
+
     localStorage.clear();
     navigate("/login");
   }
@@ -33,7 +35,7 @@ export default function Sidebar() {
           </li>
           <li className='sidebarListItem'>
             <Logout className='sidebarListItemIcon'/>
-            <span className='sidebarListItemText' onClick={handleLogout}>Logout</span>
+            <span className='sidebarListItemText' onClick={(e) => handleLogout(e)}>Logout</span>
           </li>
         </div>
       </div>

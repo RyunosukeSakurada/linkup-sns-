@@ -5,7 +5,6 @@ import {Link, useNavigate} from "react-router-dom"
 
 
 export default function Register() {
-
   const username = useRef();
   const fullname = useRef();
   const password = useRef();
@@ -25,8 +24,9 @@ export default function Register() {
           username : username.current.value,
           password : password.current.value,
           confirmationPassword : confirmationPassword.current.value,
-        }
-        await axios.post("/auth/register", user)
+        };
+        // Register API
+        await axios.post("/auth/register", user);
         navigate("/login");
       } catch (error) {
         console.log(error);

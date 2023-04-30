@@ -78,11 +78,11 @@ export default function Post( {post} ) {
               onClick ={() => handleLike()}
             />
             <span className='postLikeCounter'>
-              {like}人がいいねを押しました
+              {like}likes
             </span>
           </div>
           <div className="postBottomRight">
-            <span className='postComment'>{post.comment}: コメント</span>
+            <span className='postComment'>{post.comment}: comments</span>
           </div>
         </div>
       </div>
